@@ -1,0 +1,53 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+# rhdb
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+rhdb provides an R interface into the Burea of Reclamation's public facing hydrologic database (HDB). This package queries HDB throght the API at [https://www.usbr.gov/lc/region/g4000/riverops/_HdbWebQuery.html](https://www.usbr.gov/lc/region/g4000/riverops/_HdbWebQuery.html).
+
+## Installation
+
+rhdb is currently only available on GitHub and can beinstalled as follows:
+
+``` r
+# install.packages("remotes")
+remotes::install_github("BoulderCodeHub/rhdb")
+```
+
+## Usage
+
+rhdb can be used to query observed and modeled data from HDB. The data are returned in a data frame. At this time, it is up to the user to know the Site-Datetype ID (sdi) and the server that sdi is stored on. The model run id (mrid) only needs to be specified when querying modeled data.
+
+For example, Lake Powell's daily historical elevation and release for January 1-10, 2020 can be queried as follows:
+
+```{r}
+library(rhdb)
+
+df <- hdb_query(c(1872, 1928), "uc", "daily", "2020-01-01", "2020-01-10")
+df
+```
+
+Additionally, Lake Mead's projected elevations from the December 2018 24-Month Study model can be queried:
+
+```{r}
+df <- hdb_query(1930, "lc", "monthly", "2018-12", "2019-12", mrid = 3081)
+df
+```
+
+## Log
+
+* 2020-08-21: version 0.1.0
