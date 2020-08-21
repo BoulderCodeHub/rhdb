@@ -30,6 +30,9 @@ the Site-Datetype ID (sdi) and the server that sdi is stored on. The
 model run id (mrid) only needs to be specified when querying modeled
 data.
 
+rhdb includes only one exported function: `hdb_query()`. This can be
+used to match all queries that are possible from the above link.
+
 For example, Lake Powell’s daily historical elevation and release for
 January 1-10, 2020 can be queried as follows:
 
