@@ -111,6 +111,8 @@ get_data <- function(x) {
   tsdata <- tsdata[, c("sdi", "t", "mrid", "v", "units")]
   names(tsdata)[2] <- "time_step"
   names(tsdata)[4] <- "value"
+  tsdata$sdi <- as.numeric(tsdata$sdi)
+  tsdata$value <- as.numeric(tsdata$value)
 
   # add attributes
   attr(tsdata, "QueryDate") <- y$QueryDate
