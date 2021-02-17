@@ -2,6 +2,7 @@
 
 * When successful query returns no data, the query now returns a data frame with one row. The row has the sdi, mrid, but `NA` for value, and no time_step. (#6)
 * In `hdb_query()`, ensure that `end_date` is the same or after `start_date`. (#5)
+* Added `hdb_metadata()` to get meta data, which makes it possible to find SDIs knowing a site name and variable type. (#4)
 
 # rhdb 0.1.0-*
 
