@@ -107,6 +107,13 @@ get_data <- function(x) {
 
   tsdata <- do.call(rbind, lapply(tsdata, function(i) i))
 
+  # can return valid url with no data. If so, there is no "v" or "t" field
+  if (!("v" %in% colnames(tsdata))) {
+    tsdata <- as.data.frame(tsdata)
+    tsdata$t <- ""
+    tsdata$v <- ""
+  }
+
   # reorder columns and change t v names to time_step, value
   tsdata <- tsdata[, c("sdi", "t", "mrid", "v", "units")]
   names(tsdata)[2] <- "time_step"
