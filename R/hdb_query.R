@@ -199,5 +199,11 @@ check_date_parse <- function(x) {
     "Please ensure `start_date` and `end_date` are provided in expected format."
     )
   )
+
+  assert_that(
+    x[2] >= x[1],
+    msg = "`start_date` must be before or the same as `end_date`."
+  )
+
   invisible(x)
 }
