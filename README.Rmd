@@ -32,7 +32,7 @@ remotes::install_github("BoulderCodeHub/rhdb")
 
 rhdb can be used to query observed and modeled data from HDB. The data are returned in a data frame. At this time, it is up to the user to know the Site-Datetype ID (sdi) and the server that sdi is stored on. The model run id (mrid) only needs to be specified when querying modeled data.
 
-rhdb includes only one exported function: `hdb_query()`. This can be used to match all queries that are possible from the above link. 
+rhdb includes one function to get data from hdb (`hdb_query()`) and one function to get metadata associated with data types and names (`hdb_metadata()`). `hdb_query()` can be used to match all queries that are possible from the above link. 
 
 For example, Lake Powell's daily historical elevation and release for January 1-10, 2020 can be queried as follows:
 
@@ -50,6 +50,23 @@ df <- hdb_query(1930, "lc", "monthly", "2018-12", "2019-12", mrid = 3081)
 df
 ```
 
+A user could find the correct sdi for Powell's inflow by searching the metadata:
+
+```{r, message=FALSE}
+library(dplyr)
+library(stringr)
+
+md <- hdb_metadata()
+md %>%
+  filter(str_detect(site_metadata.site_name, "POWELL")) %>%
+  select(site_datatype_id, site_metadata.site_name, 
+         datatype_metadata.datatype_common_name)
+
+```
+
+Based on the above, the SDI 1792 is Powell's inflow. 
+
 ## Log
 
+* 2021-02-17: version 0.2.0
 * 2020-08-21: version 0.1.0
