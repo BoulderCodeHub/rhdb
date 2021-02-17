@@ -81,7 +81,29 @@ construct_url <- function(sdi, server, time_step, start_date, end_date,
 
 # x is url
 get_data <- function(x) {
-  y <- jsonlite::fromJSON(x, flatten = TRUE)
+
+  # try the url multiple times since it seems like this is necessary
+  # based on known working urls returning the html instead of JSON
+  keep_trying <- TRUE
+  try_count <- 1
+
+  while (keep_trying) {
+    if (try_count > 1) {
+      message("Trying url ... try # ", try_count)
+    }
+
+    try_error <- try(y <- jsonlite::fromJSON(x, flatten = TRUE), silent = TRUE)
+
+    if (methods::is(try_error, "try-error")) {
+      if (try_count > getOption("rhdb.try_url_n")) {
+        stop("Reached maximum number of tries without a successful response.\n",
+             "Try again, or consider increasing the 'rhdb.try_url_n' option.")
+      }
+      try_count <- try_count + 1
+    } else {
+      keep_trying <- FALSE
+    }
+  }
 
   # convert the list into a data frame with attributes
   # data frame will have sdi, time_step, value, mrid, and units column
