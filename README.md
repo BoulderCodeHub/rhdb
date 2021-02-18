@@ -146,5 +146,6 @@ Based on the above, the SDI 1792 is Powell’s inflow.
 
 ## Log
 
+  - 2021-02-18: version 0.2.1
   - 2021-02-17: version 0.2.0
   - 2020-08-21: version 0.1.0

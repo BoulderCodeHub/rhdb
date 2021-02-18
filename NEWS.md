@@ -1,3 +1,7 @@
+# rhdb 0.2.1
+
+* For empty data, the columns were being returned as lists, instead of characters and numerics. This was fixed so the empty data frame only includes characters and numerics. (#8)
+
 # rhdb 0.2.0
 
 *Released February 17, 2021*

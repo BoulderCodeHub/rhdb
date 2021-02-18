@@ -127,11 +127,10 @@ get_data <- function(x) {
     tmp
   })
 
-  tsdata <- do.call(rbind, lapply(tsdata, function(i) i))
+  tsdata <- do.call(rbind, lapply(tsdata, function(i) as.data.frame(i)))
 
   # can return valid url with no data. If so, there is no "v" or "t" field
   if (!("v" %in% colnames(tsdata))) {
-    tsdata <- as.data.frame(tsdata)
     tsdata$t <- ""
     tsdata$v <- ""
   }
