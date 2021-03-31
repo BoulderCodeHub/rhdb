@@ -2,9 +2,10 @@ Package: rhdb
 Type: Package
 Title: Query Data from Bureau of Reclamation's Hydrologic Database
         (HDB)
-Version: 0.2.1-2
-Authors@R: person("Alan", "Butler", ,"rabutler@usbr.gov",
-        c("aut","cre"))
+Version: 0.2.1-3
+Authors@R: person(given = "Alan", family = "Butler",email =
+        "rabutler@usbr.gov", role = c("aut","cre"), comment = c(ORCID =
+        "0000-0002-8625-6386"))
 Description: R interface to query Bureau of Reclamation's public facing
         Hydrologic Database (HDB), available at:
         <https://www.usbr.gov/lc/region/g4000/riverops/_HdbWebQuery.html/>.
