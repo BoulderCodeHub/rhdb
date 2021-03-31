@@ -1,3 +1,9 @@
+# rhdb 0.2.1-n
+
+*In development*
+
+* Added in LC reservoir metadata.
+
 # rhdb 0.2.1
 
 * For empty data, the columns were being returned as lists, instead of characters and numerics. This was fixed so the empty data frame only includes characters and numerics. (#8)

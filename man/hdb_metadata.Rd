@@ -7,9 +7,9 @@
 hdb_metadata(server = "uc", type = "reservoir")
 }
 \arguments{
-\item{server}{Character scaler of server. Only "uc" is valid.}
+\item{server}{Character scalar of server. Only "uc" or "lc" is valid.}
 
-\item{type}{Character scaler of data type. Only "reservoir" is valid.}
+\item{type}{Character scalar of data type. Only "reservoir" is valid.}
 }
 \value{
 data frame
@@ -18,5 +18,6 @@ data frame
 \code{hdb_metadata()} gets the metadata for a particular hdb server and data type
 (e.g., reservoir). This allows the user to find the correct SDI when knowing
 a site name and variable type, rather than having to know the SDI directly.
-\strong{Currently, this only works for UC's reservoir data.}
+\strong{Currently, this only works for UC and LC reservoir data.} The data frame
+has different variables depending on whether it is UC or LC.
 }
