@@ -4,7 +4,6 @@
 # rhdb
 
 <!-- badges: start -->
-
 <!-- badges: end -->
 
 rhdb provides an R interface into the Burea of Reclamation’s public
@@ -74,7 +73,7 @@ Additionally, Lake Mead’s projected elevations from the December 2018
 ``` r
 df <- hdb_query(1930, "lc", "monthly", "2018-12", "2019-12", mrid = 3081)
 #> query url:
-#> https://www.usbr.gov/pn-bin/hdb/hdb.pl?sdi=1930&svr=lchdb2&tstp=MN&t1=2018-12-01T00:00&t2=2019-12-01T00:00&table=M&mrid=3081&format=json
+#> https://www.usbr.gov/pn-bin/hdb/hdb.pl?sdi=1930&svr=lchdb&tstp=MN&t1=2018-12-01T00:00&t2=2019-12-01T00:00&table=M&mrid=3081&format=json
 df
 #>     sdi             time_step mrid    value units
 #> 1  1930 12/1/2018 12:00:00 AM 3081 1081.395  feet
@@ -146,6 +145,7 @@ Based on the above, the SDI 1792 is Powell’s inflow.
 
 ## Log
 
-  - 2021-02-18: version 0.2.1
-  - 2021-02-17: version 0.2.0
-  - 2020-08-21: version 0.1.0
+- 2024-01-03: version 0.3.0
+- 2021-02-18: version 0.2.1
+- 2021-02-17: version 0.2.0
+- 2020-08-21: version 0.1.0

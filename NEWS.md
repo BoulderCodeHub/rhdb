@@ -1,8 +1,9 @@
-# rhdb 0.2.1-n
+# rhdb 0.3.0
 
-*In development*
+*Released January 3, 2024*
 
-* Added in LC reservoir metadata.
+* Added in LC reservoir metadata. Can now use `hdb_metadata('lc')` to get SDIs for LC reservoir data. 
+* Fixed LC server name to work with recent changes. 
 
 # rhdb 0.2.1
 
