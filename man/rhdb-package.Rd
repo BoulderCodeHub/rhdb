@@ -4,12 +4,9 @@
 \name{rhdb-package}
 \alias{rhdb}
 \alias{rhdb-package}
-\title{rhdb: Query Data from Bureau of Reclamation's Hydrologic Database
-        (HDB)}
+\title{rhdb: Query Data from Bureau of Reclamation's Hydrologic Database (HDB)}
 \description{
-R interface to query Bureau of Reclamation's public facing
-        Hydrologic Database (HDB), available at:
-        <https://www.usbr.gov/lc/region/g4000/riverops/_HdbWebQuery.html/>.
+R interface to query Bureau of Reclamation's public facing Hydrologic Database (HDB), available at: \url{https://www.usbr.gov/lc/region/g4000/riverops/_HdbWebQuery.html/}.
 }
 \details{
 rhdb includes the following package options:
@@ -19,7 +16,7 @@ tried before aborting with an error. The default is 5.
 }
 }
 \author{
-\strong{Maintainer}: Alan Butler \email{rabutler@usbr.gov}
+\strong{Maintainer}: Alan Butler \email{rabutler@usbr.gov} (\href{https://orcid.org/0000-0002-8625-6386}{ORCID})
 
 }
 \keyword{internal}
