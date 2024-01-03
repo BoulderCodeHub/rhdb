@@ -172,7 +172,7 @@ servers <- function() {
 }
 
 server_map <- function() {
-  x <- c("lchdb2", "uchdb2", "ecohdb", "yaohdb", "lbohdb")
+  x <- c("lchdb", "uchdb2", "ecohdb", "yaohdb", "lbohdb")
   names(x) <- servers()
   x
 }
