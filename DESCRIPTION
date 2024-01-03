@@ -2,7 +2,7 @@ Package: rhdb
 Type: Package
 Title: Query Data from Bureau of Reclamation's Hydrologic Database
         (HDB)
-Version: 0.2.1-4
+Version: 0.2.1-5
 Authors@R: person(given = "Alan", family = "Butler",email =
         "rabutler@usbr.gov", role = c("aut","cre"), comment = c(ORCID =
         "0000-0002-8625-6386"))
